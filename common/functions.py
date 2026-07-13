@@ -18,6 +18,8 @@ def softmax(x):
 
 
 # cross_entropy_error: 交叉熵损失函数实现，可同时处理单个样本和批量数据，也兼容 One-Hot 编码和 标签索引 两种格式标签
+# return: 一个具体的数值（交叉熵损失值），代表了当前这批数值的平均损失，
+# 它用来定量衡量模型的预测概率分布 y 与真实标签 t 之间的“差距”。损失值越接近 0，说明模型猜得越准。
 def cross_entropy_error(y, t):
     if y.ndim == 1:
         t = t.reshape(1, t.size)
