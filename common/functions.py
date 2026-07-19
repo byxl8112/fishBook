@@ -6,6 +6,11 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
+# 计算 sigmoid(x) 激活函数的导数（梯度）
+def sigmoid_grad(x):
+    return (1.0 - sigmoid(x)) * sigmoid(x)
+
+
 # softmax：把神经网络最后一层的输出变成各个类别的概率，概率最大的就是预测结果
 def softmax(x):
     if x.ndim == 2:  # 判断是否是 二维数组
